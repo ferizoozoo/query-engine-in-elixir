@@ -22,7 +22,7 @@ defmodule QueryEngine.Query do
   end
 
   def join(query, source, on) do
-    %{query | joins: query.joins ++ [{source, on}]}
+    %{query | joins: query.joins ++ [%{source: source, on: on}]}
   end
 
   def group_by(query, fields) do
